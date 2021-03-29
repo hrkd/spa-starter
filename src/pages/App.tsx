@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import logo from '../logo.svg';
 import '../styles/App.scss';
+import { useApi } from '../hooks/useApi';
 
 function App() {
+  const [data] = useApi('endpoint');
+
   return (
     <div className="App">
       <header className="App-header">

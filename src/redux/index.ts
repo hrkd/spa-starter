@@ -7,13 +7,12 @@ import {
 import logger from 'redux-logger';
 
 import { initialState } from './state';
-import { reducers, extraReducers } from './reducer';
+import { reducers } from './reducer';
 
 const appModule = createSlice({
   name: 'tasks',
   initialState,
   reducers: reducers,
-  extraReducers: extraReducers,
 });
 
 // const rootReducer = combineReducers({
