@@ -4,7 +4,7 @@ import '../styles/App.scss';
 import { useApi } from '../hooks/useApi';
 
 function App() {
-  const [data] = useApi('endpoint');
+  useApi('one');
 
   return (
     <div className="App">
