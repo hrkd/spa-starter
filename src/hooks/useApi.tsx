@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react';
-import { fetch } from '../utils/api';
+import { useEffect, useState } from 'react';
+import { fetch, Endpoint } from '../utils/api';
 
 export const useApi = (endpoint: Endpoint) => {
-  const [url, setUrl] = useState<string>(getQuery(endpoint));
+  const [url] = useState<Endpoint>(endpoint);
   const [data, setData] = useState<number>(0);
 
   useEffect(() => {
@@ -14,14 +14,4 @@ export const useApi = (endpoint: Endpoint) => {
   }, [url]);
 
   return [data];
-};
-
-type Endpoint = 'one' | 'two';
-const getQuery = (endpoint: Endpoint): string => {
-  switch (endpoint) {
-    case 'one':
-      return 'one';
-    case 'two':
-      return 'two';
-  }
 };
