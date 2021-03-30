@@ -4,7 +4,7 @@ import '../styles/App.scss';
 import { useApi } from '../hooks/useApi';
 
 function App() {
-  useApi('one');
+  const [works] = useApi('works');
 
   return (
     <div className="App">
@@ -21,6 +21,7 @@ function App() {
         >
           Learn React
         </a>
+        {works && works.map((work, index) => <p key={index}>{work.slug}</p>)}
       </header>
     </div>
   );

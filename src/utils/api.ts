@@ -1,15 +1,13 @@
 import axios from 'axios';
 
 export const fetch = (endpoint: Endpoint) => {
-  return axios(getQuery(endpoint));
+  return axios(process.env.REACT_APP_API_URL + getQuery(endpoint));
 };
 
-export type Endpoint = 'one' | 'two';
+export type Endpoint = 'works';
 const getQuery = (endpoint: Endpoint): string => {
   switch (endpoint) {
-    case 'one':
-      return 'onee';
-    case 'two':
-      return 'two';
+    case 'works':
+      return '/works';
   }
 };

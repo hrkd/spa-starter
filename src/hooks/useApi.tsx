@@ -5,7 +5,7 @@ import { toggleLoading } from '../redux/index';
 
 export const useApi = (endpoint: Endpoint) => {
   const [url] = useState<Endpoint>(endpoint);
-  const [data, setData] = useState<number>(0);
+  const [data, setData] = useState<[any]>();
   const dispatch = useDispatch();
 
   useEffect(() => {
