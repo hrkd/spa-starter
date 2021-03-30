@@ -1,8 +1,7 @@
 import axios from 'axios';
 
-export const fetch = (endpoint: Endpoint) => {
-  return axios(process.env.REACT_APP_API_URL + getQuery(endpoint));
-};
+export const fetch = (endpoint: Endpoint) =>
+  axios(process.env.REACT_APP_API_URL + getQuery(endpoint));
 
 export type Endpoint = 'works';
 const getQuery = (endpoint: Endpoint): string => {
